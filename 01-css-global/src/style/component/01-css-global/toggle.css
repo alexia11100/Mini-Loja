@@ -1,139 +1,118 @@
-/* The switch - the box around the slider */
-.switch {
-  font-size: 17px;
+/* Toggle.css */
+:root {
+  /* fallback theme values (you can override with CSS variables if you use a theme) */
+  --toggle-width: 56px;
+  --toggle-height: 32px;
+  --toggle-radius: 9999px;
+  --toggle-circle-size: 24px;
+  --toggle-gap: 4px;
+  --transition: 200ms;
+  --primary: #3b82f6; /* azul do exemplo */
+  --light-track: rgba(156, 163, 175, 0.2);
+  --dark-track: rgba(59, 130, 246, 0.2);
+  --bg-off: #cbd5e0;
+  --circle-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+/* Button */
+.toggle-button {
   position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  border-radius: var(--toggle-radius);
+  background-color: var(--bg-off);
+  transition: all var(--transition) ease;
+  border: none;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  border: 1px solid #ccc;
-  transition: .4s;
-  border-radius: 32px;
   outline: none;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle-button:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.toggle-button:hover {
+  opacity: 0.9;
+}
+
+/* Dark state */
+.toggle-button.dark {
+  background-color: var(--primary);
+}
+
+/* Toggle circle */
+.toggle-circle {
+  position: absolute;
+  top: var(--toggle-gap);
+  left: var(--toggle-gap);
+  width: var(--toggle-circle-size);
+  height: var(--toggle-circle-size);
+  background-color: #ffffff;
+  border-radius: var(--toggle-radius);
+  box-shadow: var(--circle-shadow);
+  transform: translateX(0);
+  transition: transform var(--transition) ease;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0 4px;
+  justify-content: center;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 50%;
-  left: 4px;
-  bottom: 3px;
-  background-color: white;
-  transition: .4s;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+/* move to right when dark */
+.toggle-button.dark .toggle-circle {
+  transform: translateX(calc(var(--toggle-width) - var(--toggle-circle-size) - (var(--toggle-gap) * 2)));
 }
 
-.slider-icon {
-  width: 1em;
-  height: 1em;
-  color: #666;
-  transition: all 0.4s;
-  margin-left: 0.2em;
-  z-index: 1;
+/* Icon container */
+.icon-container {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-input:checked + .slider {
-  background-color: #668fcc;
-  border-color: #668fcc;
-  justify-content: flex-end;
-}
-
-input:checked + .slider:before {
-  transform: translateX(1.5em);
-}
-
-input:checked + .slider .slider-icon {
-  color: #ffd700;
-  margin-right: 0.2em;
-  margin-left: 0;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #668fcc;
-}
-
-/* Dark mode styles */
-.dark .slider {
-  background-color: #4a5568;
-  border-color: #4a5568;
-}
-
-.dark .slider:before {
-  background-color: #1a202c;
-}
-
-.dark input:checked + .slider {
-  background-color: #4299e1;
-  border-color: #4299e1;
-}
-
-.dark .slider-icon {
-  color: #a0aec0;
-}
-
-.dark input:checked + .slider .slider-icon {
-  color: #ffd700;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  outline: 2px solid #B0B0B0;
-  left: -1px;
-  bottom: -1px;
-  background-color: #fff;
-  transition: transform .25s ease-in-out 0s;
-}
-
-.slider-icon {
-  opacity: 0;
-  height: 12px;
+/* icons use currentColor / classes to color */
+.icon {
   width: 12px;
-  stroke-width: 8;
+  height: 12px;
+  fill: currentColor;
+  display: block;
+}
+
+.icon.sun {
+  color: #f59e0b; /* amarelo do sol */
+}
+
+.icon.moon {
+  color: #6b7280; /* cinza lua */
+}
+
+/* Background track and indicator */
+.background-track {
   position: absolute;
-  z-index: 999;
-  stroke: #222222;
-  right: 60%;
-  top: 30%;
-  transition: right ease-in-out .3s, opacity ease-in-out .15s;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  border-radius: var(--toggle-radius);
+  overflow: hidden;
+  pointer-events: none; /* não atrapalha clique */
 }
 
-input:checked + .slider {
-  background-color: #222222;
+.track-indicator {
+  position: absolute;
+  top: var(--toggle-gap);
+  bottom: var(--toggle-gap);
+  width: var(--toggle-circle-size);
+  border-radius: var(--toggle-radius);
+  transition: all var(--transition) ease;
+  left: var(--toggle-gap);
+  background-color: var(--light-track);
 }
 
-input:checked + .slider .slider-icon {
-  opacity: 1;
-  right: 20%;
-}
-
-input:checked + .slider:before {
-  transform: translateX(1.5em);
-  outline-color: #181818;
+/* when dark, position to right and change color */
+.toggle-button.dark .track-indicator {
+  right: var(--toggle-gap);
+  left: auto;
+  background-color: var(--dark-track);
 }
