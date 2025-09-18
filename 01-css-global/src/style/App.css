@@ -1,0 +1,58 @@
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg, #f4f6fb);
+  margin: 0;
+  color: var(--text, #071033);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background: #0f1419;
+  color: #f7fafc;
+}
+
+main {
+  padding-top: 80px; /* Espaço para a navbar fixa */
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0 0 16px 0;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.products-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(5, 1fr); /* 5 cards por linha */
+  align-items: start;
+}
+
+/* Responsividade para a grid */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

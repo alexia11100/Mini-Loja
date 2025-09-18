@@ -1,0 +1,188 @@
+
+/* ProductCard CSS Module */
+.productCard {
+  background: #ffffff;
+  color: #071033;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.productCardDark {
+  background: #1a202c;
+  color: #f7fafc;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+}
+
+.productCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(128, 128, 128, 0.12);
+}
+
+.productCardDark:hover {
+  box-shadow: 0 14px 36px rgba(255, 255, 255, 0.1);
+}
+
+.productCard.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Media area */
+.productMedia {
+  position: relative;
+  width: 100%;
+  height: 15rem;
+  aspect-ratio: 16/10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Wishlist button */
+.wishBtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(2, 6, 23, 0.06);
+  transition: transform .12s ease, background .12s ease;
+}
+
+.wishBtnDark {
+  background: rgba(26, 32, 44, 0.9);
+}
+
+.wishBtn:hover {
+  transform: translateY(-2px);
+}
+
+.wishBtn svg {
+  width: 16px;
+  height: 16px;
+  color: #ef476f;
+}
+
+/* Body */
+.productBody {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.productTitle {
+  margin: 0;
+  font-size: 1.02rem;
+  color: #071033;
+  line-height: 1.3;
+  min-height: 2.6em;
+}
+
+.productTitleDark {
+  color: #f7fafc;
+}
+
+/* Rating */
+.productRating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.productRatingDark {
+  color: #9ca3af;
+}
+
+.stars {
+  display: flex;
+  gap: 0.18rem;
+  align-items: center;
+}
+
+.star {
+  width: 14px;
+  height: 14px;
+  color: #f6b93b;
+}
+
+.ratingValue {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.ratingValueDark {
+  color: #9ca3af;
+}
+
+/* Footer */
+.productFooter {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.productPrice {
+  font-weight: 700;
+  font-size: 1.06rem;
+  color: #071033;
+}
+
+.productPriceDark {
+  color: #f7fafc;
+}
+
+/* Add button */
+.btnAdd {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  background: #668fcc;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .12s ease, opacity .12s ease, background .12s ease;
+}
+
+.btnAddDark {
+  background: #4299e1;
+}
+
+.btnAdd:hover {
+  transform: translateY(-2px);
+  background: #5a7cb8;
+}
+
+.btnAddDark:hover {
+  background: #3182ce;
+}
+
+.btnAdd:active {
+  transform: translateY(0);
+}

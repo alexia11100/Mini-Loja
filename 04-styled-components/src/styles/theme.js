@@ -1,0 +1,101 @@
+export const lightTheme = {
+  colors: {
+    background: '#ffffff',
+    surface: '#f8fafc',
+    surfaceHover: '#f1f5f9',
+    text: '#1f2937',
+    textSecondary: '#6b7280',
+    primary: '#3b82f6',
+    primaryHover: '#2563eb',
+    accent: '#10b981',
+    accentHover: '#059669',
+    border: '#e5e7eb',
+    shadow: 'rgba(0, 0, 0, 0.1)',
+    cardShadow: 'rgba(0, 0, 0, 0.05)',
+    cardShadowHover: 'rgba(0, 0, 0, 0.15)',
+  },
+  spacing: {
+    xs: '0.25rem',
+    sm: '0.5rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem',
+    '2xl': '3rem',
+    '3xl': '4rem',
+  },
+  breakpoints: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+  },
+  transitions: {
+    fast: '0.15s ease-in-out',
+    normal: '0.3s ease-in-out',
+    slow: '0.5s ease-in-out',
+  },
+  borderRadius: {
+    sm: '0.25rem',
+    md: '0.5rem',
+    lg: '0.75rem',
+    xl: '1rem',
+    full: '9999px',
+  },
+  shadows: {
+    sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+    md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+    xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+  }
+};
+
+export const darkTheme = {
+  colors: {
+    background: '#111827',
+    surface: '#1f2937',
+    surfaceHover: '#374151',
+    text: '#f9fafb',
+    textSecondary: '#d1d5db',
+    primary: '#60a5fa',
+    primaryHover: '#3b82f6',
+    accent: '#34d399',
+    accentHover: '#10b981',
+    border: '#374151',
+    shadow: 'rgba(0, 0, 0, 0.3)',
+    cardShadow: 'rgba(0, 0, 0, 0.2)',
+    cardShadowHover: 'rgba(0, 0, 0, 0.4)',
+  },
+  spacing: {
+    xs: '0.25rem',
+    sm: '0.5rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem',
+    '2xl': '3rem',
+    '3xl': '4rem',
+  },
+  breakpoints: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+  },
+  transitions: {
+    fast: '0.15s ease-in-out',
+    normal: '0.3s ease-in-out',
+    slow: '0.5s ease-in-out',
+  },
+  borderRadius: {
+    sm: '0.25rem',
+    md: '0.5rem',
+    lg: '0.75rem',
+    xl: '1rem',
+    full: '9999px',
+  },
+  shadows: {
+    sm: '0 1px 2px 0 rgba(0, 0, 0, 0.2)',
+    md: '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2)',
+    lg: '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2)',
+    xl: '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)',
+  }
+};
